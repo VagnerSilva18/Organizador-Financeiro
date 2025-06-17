@@ -26,7 +26,6 @@ import { InputSenha } from "../components/InputSenha";
 
 import * as ImagePicker from 'expo-image-picker';
 
-
 type Props = NativeStackScreenProps<RootStackParamList, "EditarPerfil">;
 
 export default function EditarPerfil({ navigation }: Props) {
