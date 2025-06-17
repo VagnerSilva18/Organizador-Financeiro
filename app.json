@@ -20,10 +20,19 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "package": "com.vagnerprogramador.myfinances"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "4687a73b-d874-4036-af89-27e98bbd2c54"
+      }
+    },
+    "plugins": [
+      "expo-sqlite"
+    ]
   }
 }
