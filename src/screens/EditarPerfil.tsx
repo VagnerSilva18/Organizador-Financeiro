@@ -18,7 +18,6 @@ import { RootStackParamList } from "../routes/stack.routes";
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 
-
 import { useProductDatabase, ProductDatabase } from "../database/useProductDatabase";
 import { Product } from "../components/Product";
 import { Input } from "../components/Input";
