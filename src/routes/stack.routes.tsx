@@ -5,6 +5,9 @@ import TabRoutes from "./tab.routes";
 import CadastrarUsuario from "../screens/CadastrarUsuario";
 import ListarUsuario from "../screens/ListarUsuario";
 import EditarPerfil from "../screens/EditarPerfil";
+import Duvidas from "../screens/Duvidas";
+import ConvidarAmigos from "../screens/ConvidarAmigos";
+import Sobre from "../screens/Sobre";
 
 export type RootStackParamList = {
   Inicio: undefined;
@@ -12,6 +15,9 @@ export type RootStackParamList = {
   CadUsuario: undefined;
   ListUser: undefined;
   EditarPerfil: undefined;
+  Duvidas: undefined;
+  ConvidarAmigos: undefined;
+  Sobre: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -24,6 +30,9 @@ export default function StackRoutes() {
       <Stack.Screen name="CadUsuario" component={CadastrarUsuario} options={ {gestureEnabled: true }} />
       <Stack.Screen name="ListUser" component={ListarUsuario} options={ {gestureEnabled: true }} />
       <Stack.Screen name="EditarPerfil" component={EditarPerfil} />
+      <Stack.Screen name="Duvidas" component={Duvidas} />
+      <Stack.Screen name="ConvidarAmigos" component={ConvidarAmigos} />
+      <Stack.Screen name="Sobre" component={Sobre} />
     </Stack.Navigator>
   );
 }

@@ -1,5 +1,4 @@
-import { StyleSheet, View, Text } from "react-native";
-import { useState } from "react";
+import { StatusBar, StyleSheet, View, Text } from "react-native";
 
 export default function Home() {
   const valorPlanejado = 2000;
@@ -9,33 +8,36 @@ export default function Home() {
   return (
     <View style={styles.container}>
 
-      <View style={styles.cabecalho} accessibilityRole="header">
-        <Text style={styles.lbcabecalho}>Tela Inicial</Text>
+      <StatusBar barStyle="light-content" backgroundColor="transparent" translucent />
+
+      <View style={styles.header}>
+        <Text style={styles.headerTitle}>Tela Inicial</Text>
       </View>
 
-      <View style={styles.flexBloco}>
+      <View style={styles.blocosContainer}>
         <View style={styles.bloco}>
-          <Text style={styles.txtPlanejado}>Planejado</Text>
-          <Text style={styles.vMeta}>{valorPlanejado.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</Text>
+          <Text style={styles.label}>Planejado</Text>
+          <Text style={styles.valorPlanejado}>{valorPlanejado.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</Text>
         </View>
 
         <View style={styles.bloco}>
-          <Text style={styles.txtRestante}>Restante</Text>
-          <Text style={styles.vRestante}>{valorRestante.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</Text>
+          <Text style={styles.label}>Restante</Text>
+          <Text style={styles.valorRestante}>{valorRestante.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</Text>
         </View>
       </View>
 
-      <View style={styles.totalInformado}>
-        <Text style={styles.txtTotal}>Total Gasto</Text>
-        <Text style={styles.lbTotal}>
+      <View style={styles.totalContainer}>
+        <Text style={styles.totalLabel}>Total Gasto</Text>
+        <Text style={styles.totalValor}>
           {totalGasto.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}
         </Text>
       </View>
 
-      <View style={styles.txtGastos}>
-        <Text style={styles.txtG}>GASTOS POR CATEGORIAS</Text>
-        <Text style={styles.txtG}>R$</Text>
+      <View style={styles.footer}>
+        <Text style={styles.footerText}>GASTOS POR CATEGORIAS</Text>
+        <Text style={styles.footerText}>R$</Text>
       </View>
+
     </View>
   );
 }
@@ -44,68 +46,75 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#1B1B1E',
+    paddingHorizontal: 16,
   },
-  cabecalho: {
-    marginTop: 30,
-    height: 60,
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center'
+  header: {
+    marginBottom: 20,
+    alignItems: 'center',
+    marginTop: 40,
   },
-  lbcabecalho: {
+  headerTitle: {
     color: '#FFFFFF',
-    fontSize: 18,
-    fontWeight: 'bold'
+    fontSize: 22,
+    fontWeight: 'bold',
   },
-  flexBloco: {
+  blocosContainer: {
     flexDirection: 'row',
-    gap: 10,
-    justifyContent: 'center',
-    paddingVertical: 10,
+    justifyContent: 'space-between',
+    marginBottom: 20,
   },
   bloco: {
     backgroundColor: '#2E2F3E',
-    padding: 10,
+    paddingVertical: 15,
+    paddingHorizontal: 20,
+    borderRadius: 16,
     alignItems: 'center',
-    borderRadius: 10,
-    width: 150
+    flex: 1,
+    marginHorizontal: 5,
+    elevation: 3,
   },
-  txtPlanejado: {
-    color: '#FFFFFF',
-    fontSize: 14
+  label: {
+    color: '#AAA',
+    fontSize: 14,
+    marginBottom: 5,
   },
-  vMeta: {
-    color: '#26DC4E',
-    fontSize: 17
+  valorPlanejado: {
+    color: '#4ADE80', // Verde claro
+    fontSize: 18,
+    fontWeight: 'bold',
   },
-  txtRestante: {
-    color: '#FFFFFF',
-    fontSize: 14
+  valorRestante: {
+    color: '#60A5FA', // Azul claro
+    fontSize: 18,
+    fontWeight: 'bold',
   },
-  vRestante: {
-    color: '#61CDFC',
-    fontSize: 17,
-  },
-  totalInformado: {
+  totalContainer: {
     backgroundColor: '#2E2F3E',
-    justifyContent: 'center',
+    paddingVertical: 20,
+    paddingHorizontal: 10,
+    borderRadius: 16,
     alignItems: 'center',
-    paddingVertical: 10,
+    elevation: 2,
   },
-  txtTotal: {
-    color: '#DB5D5D',
+  totalLabel: {
+    color: '#F87171', // Vermelho claro
     fontSize: 16,
+    marginBottom: 4,
   },
-  lbTotal: {
-    fontSize: 20,
-    color: '#DB5D5D'
+  totalValor: {
+    color: '#F87171',
+    fontSize: 22,
+    fontWeight: 'bold',
   },
-  txtGastos: {
+  footer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    padding: 15,
+    marginTop: 30,
+    paddingHorizontal: 5,
   },
-  txtG: {
+  footerText: {
     color: '#86D5F6',
+    fontSize: 14,
+    fontWeight: '500',
   },
 });

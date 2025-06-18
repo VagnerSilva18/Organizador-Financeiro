@@ -111,7 +111,7 @@ export default function EditarPerfil({ navigation }: Props) {
     <LinearGradient
       colors={['#FF5C5C', '#2E2F3E']} // Define as cores da gradiente
       locations={[0, 0.38]} // Define a posição de transição entre as cores
-      style={{ flex: 1, padding: 20 }}
+      style={styles.container}
     >
 
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
@@ -119,7 +119,7 @@ export default function EditarPerfil({ navigation }: Props) {
           style={{ flex: 1 }}
           behavior={Platform.OS === 'ios' ? 'padding' : 'height'} // iOS usa padding / Android height
         >
-          <ScrollView contentContainerStyle={{ flexGrow: 1, alignItems: 'center', marginTop: 40 }}>
+          <ScrollView contentContainerStyle={styles.scrollContent}>
 
             <View style={styles.cabecalho}>
 
@@ -127,7 +127,7 @@ export default function EditarPerfil({ navigation }: Props) {
                 <MaterialCommunityIcons name="arrow-left-bold-circle" size={30} color="#FFFFFF" />
               </TouchableOpacity>
 
-              <Text style={{ fontSize: 15, color: '#FFF' }}>Editar Perfil</Text>
+              <Text style={{ fontSize: 22, color: '#FFF', fontWeight: 'bold' }}>Editar Perfil</Text>
 
               <View style={{ width: 30 }} />
 
@@ -207,12 +207,20 @@ export default function EditarPerfil({ navigation }: Props) {
 }
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+  scrollContent: {
+    padding: 20,
+    alignItems: 'center'
+  },
   cabecalho: {
     alignItems: "center",
     justifyContent: "space-between",
     width: "100%",
     flexDirection: "row",
     paddingBottom: 10,
+    paddingTop: 20
   },
   imgFoto: {
     width: 120,

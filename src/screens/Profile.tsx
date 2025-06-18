@@ -17,8 +17,8 @@ export default function Profile() {
       locations={[0, 0.38]} // Define a posição de transição entre as cores
       style={styles.container}
     >
-      <View style={styles.cabecalho}>
-        <Text style={styles.lbcabecalho}>Meu Perfil</Text>
+      <View style={styles.header}>
+        <Text style={styles.headerTitle}>Perfil</Text>
       </View>
 
       <View style={styles.conteudoBotoes}>
@@ -28,23 +28,23 @@ export default function Profile() {
           <Text style={styles.texto}>Editar Perfil</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.botao}>
+        <TouchableOpacity style={styles.botao} onPress={() => navigation.navigate("Duvidas")}>
           <MaterialCommunityIcons name="message-question" size={30} color="#FFFFFF" />
           <Text style={styles.texto}>Dúvidas</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.botao}>
+        <TouchableOpacity style={styles.botao} onPress={() => navigation.navigate("ConvidarAmigos")}>
           <MaterialCommunityIcons name="account-group" size={30} color="#FFFFFF" />
           <Text style={styles.texto}>Convidar Amigos</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.botao}>
+        <TouchableOpacity style={styles.botao} onPress={() => navigation.navigate("Sobre")}>
           <MaterialCommunityIcons name="information-outline" size={30} color="#FFFFFF" />
-          <Text style={styles.texto}>Sobre</Text>
+          <Text style={styles.texto}>Termo de uso e Privacidade</Text>
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.botao}>
-          <MaterialCommunityIcons name="account-remove" size={30} color="#FFFFFF" />
+          <MaterialCommunityIcons name="logout" size={30} color="#FFFFFF" />
           <Text style={styles.texto}>Desconectar</Text>
         </TouchableOpacity>
 
@@ -58,19 +58,17 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  cabecalho: {
-    marginTop: 35,
-    height: 60,
-    flexDirection: 'row',
-    justifyContent: 'center',
+  header: {
+    marginBottom: 20,
     alignItems: 'center',
-    marginBottom: 30,
+    marginTop: 40,
   },
-  lbcabecalho: {
+  headerTitle: {
     color: '#FFFFFF',
-    fontSize: 15
+    fontSize: 22,
+    fontWeight: 'bold',
   },
-  conteudoBotoes:{
+  conteudoBotoes: {
     paddingHorizontal: 10,
   },
   botao: {
