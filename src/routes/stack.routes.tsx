@@ -8,6 +8,8 @@ import EditarPerfil from "../screens/EditarPerfil";
 import Duvidas from "../screens/Duvidas";
 import ConvidarAmigos from "../screens/ConvidarAmigos";
 import Sobre from "../screens/Sobre";
+import Renda from "../screens/Renda";
+import Meta from "../screens/Meta";
 
 export type RootStackParamList = {
   Inicio: undefined;
@@ -18,6 +20,8 @@ export type RootStackParamList = {
   Duvidas: undefined;
   ConvidarAmigos: undefined;
   Sobre: undefined;
+  Renda: undefined;
+  Meta: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -33,6 +37,8 @@ export default function StackRoutes() {
       <Stack.Screen name="Duvidas" component={Duvidas} />
       <Stack.Screen name="ConvidarAmigos" component={ConvidarAmigos} />
       <Stack.Screen name="Sobre" component={Sobre} />
+      <Stack.Screen name="Renda" component={Renda} />
+      <Stack.Screen name="Meta" component={Meta} />
     </Stack.Navigator>
   );
 }
